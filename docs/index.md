@@ -1,27 +1,3 @@
-# FAQ
+# About
 
-Here we'll answer some frequently asked questions about ecs-utdevents. If you can't find the answer to your question here or you'd like to report a bug with the website then email us at: [utdecsevents@gmail.com](mailto:utdecsevents@gmail.com)
-
-Testing live change.
-
-## As a user...
-* Whose events can I see?
-
-#### Can I add events?
-
-## As an organization...
-
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+ecs-utdevents is a site originally created by a group of senior CS students as their Senior Design project. It is an attempt at consolidating the various and expansive number of events that ECS organizations regularly put on for the community. As officers for multiple organizations we realized that it had become quite difficult to not overlap with some other event. As students we became oversaturated with information about so many events and couldn't keep up. ecs-utdevents aims to fix both of those needs.

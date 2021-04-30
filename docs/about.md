@@ -1,3 +1,0 @@
-# About
-
-ecs-utdevents is a site originally created by a group of senior CS students as their Senior Design project. It is an attempt at consolidating the various and expansive number of events that ECS organizations regularly put on for the community. As officers for multiple organizations we realized that it had become quite difficult to not overlap with some other event. As students we became oversaturated with information about so many events and couldn't keep up. ecs-utdevents aims to fix both of those needs.

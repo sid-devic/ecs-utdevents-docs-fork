@@ -1,7 +1,7 @@
 site_name: ecs-utdevents documentation
 nav:
   - index.md
-  - about.md
+  - faq.md
   - 'Developers':
     - 'Front-End': 'frontend.md'
     - 'Back-End': 'backend.md'
