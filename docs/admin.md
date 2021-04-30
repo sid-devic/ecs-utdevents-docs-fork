@@ -76,7 +76,31 @@ You can test the docs by navigating into the folder and running the following co
 
 `mkdocs serve`
 
-This will start a local build at [http://127.0.0.1:8000/](http://127.0.0.1:8000/faq/).
+This will start a local build at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 You can find out more detail about local test on [MkDocs website](https://www.mkdocs.org/#getting-started).
 
+## Front-End
+
+### Testing
+You can test locally and with Firebase Hosting. You should always be testing changes locally by running `yarn start`. However, in many cases you may also want to test your changes on a deployed test site before pushing it to our production site. This is made possible with the use of our development database! We've set up a separate dev environment for us to make changes and test them without affecting our live production site. You're already connected to the development database when you set up your front-end development environment above.
+
+To push to our dev site ([https://ecs-utdevents-dev.web.app/](https://ecs-utdevents-dev.web.app/)). Follow the instructions below:
+
+1. Navigate to your local front-end folder
+2. Open up your local `firebase.json` file and change the `site` field to **`ecs-utdevents-dev`**. 
+3. Make sure you have [Firebase CLI](https://firebase.google.com/docs/cli#install_the_firebase_cli) tools downloaded on your computer.
+4. Run `firebase login` and login to utdecsevents@gmail.com
+5. Run `yarn build`
+6. Run `firebase deploy -P dev`
+
+!!! caution
+    Do NOT commit your changes to `firebase.json` to Git. Pushing this change will cause our automatic deployment workflow to fail.
+
+### Deployment
+
+We have set up an automatic [GitHub Action](https://github.com/ecs-utd-events/ecs-utd-events/actions) that deploys the main branch to our [live site](https://ecs-utdevents.web.app/) whenever someone pushes to main. There are however a limited number of GitHub Action deployments available to a free organization (600 minutes/month) so to restrict crossing this limit and to restrict constant changes to UI/UX on the live site for users we mainly push changes to the `dev` branch. When we feel there are significant and well-tested changes on the `dev` branch we merge `dev` -> `main`, triggering the GitHub Action as well.
+
+Note that this GitHub Action also allows us to securely push our code to Firebase Hosting without exposing the necessary configuration variables for Firebase Authentication. These are important to remain hidden for our production site so that some other developer cannot reuse our configuration and potentially use their own app to login to our user database. The majority of the configuration variables are stored in GitHub Secrets and are loaded into the environment variables when building.
+
+The main reason we use a GitHub Action is to hide these environment variables. When using the `firebase deploy` method shown in the [Testing](./#testing_1) section above we create a local build (using `yarn build`) that stores all of the environemnt variables unecrypted and which can be accessed by a malicious actor.
