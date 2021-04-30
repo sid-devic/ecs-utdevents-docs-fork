@@ -32,7 +32,7 @@ You can test the docs by navigating into the folder and running the following co
 
 `mkdocs serve`
 
-This will start a local build at [http://127.0.0.1:8000/](http://127.0.0.1:8000/faq/).
+This will start a local build at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
-You can find out more detail about local test on [MkDocs website](https://www.mkdocs.org/#getting-started).
+You can find out more detail about testing on the [MkDocs website](https://www.mkdocs.org/#getting-started).
 
