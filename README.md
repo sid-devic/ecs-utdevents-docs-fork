@@ -1,8 +1,6 @@
 # ecs-utdevents Documentation
 
-Welcome to our documentation site! These docs are to help users, developers, and future maintainers understand how our website works and how you can best take advantage of it.
-
-These docs use [**MkDocs**](https://www.mkdocs.org/).
+These are markdown files for our [documentation site](https://ecs-utd-events.github.io/docs/). These docs are to help users, developers, and future maintainers understand how our website works and how you can best take advantage of it. Built using [**mkdocs**](https://www.mkdocs.org/).
 
 ## Deploying
 If you are familiar with Markdown you don't really even need to set up everything below. That's only necessary for local building and testing in case you are adding some new pages/fancy things that you aren't sure will work. Otherwise you can always just edit the files directly on GitHub.
