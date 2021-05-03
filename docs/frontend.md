@@ -1,5 +1,44 @@
 # Front-End
 
+## Getting Started
+
+### Prerequisites
+You'll need to have [`yarn`](https://classic.yarnpkg.com/en/) installed on your computer. Follow directions [here](https://classic.yarnpkg.com/en/docs/install) to get yarn set up.
+
+Unless you have access to the ecs-utd-events organizations (i.e. you are a maintainer) you will likely have to fork the repo to your personal GitHub account. Once you've forked the repository you can then clone the repo to your local machine, make changes, commit them, push them back to the forked repo and then submit a Pull Request to the main repo.
+
+If you are a maintainer then you can simply clone the original repository. You can do so by using the following command:
+
+`git clone https://github.com/ecs-utd-events/ecs-utd-events.git`.
+
+Once you have the repository on your local machine, navigate inside the ecs-utd-events and then into the front-end folder. Here you'll want to run:
+
+`yarn install` or simply `yarn`
+
+This will install all the dependencies in the React project.
+
+### Environment Setup
+Inside the front-end folder you'll need to create a `.env` file to hold environment variables necessary to connect the front-end with the back-end server and Firebase Authentication. We have created a default `.env` file for developers testing on their local machine that connects to a staging/development database. This way any changes to the data/users does not effect our live site.
+
+Copy and paste the following into your `.env` file:
+```
+REACT_APP_SERVER_URL="https://ecsutdevents-dev.azurewebsites.net"
+REACT_APP_FIREBASE_CONFIG_APIKEY="AIzaSyC3l1wm0HeN54hct_VKVIaRYagvIqXfuKo"
+REACT_APP_FIREBASE_CONFIG_AUTHDOMAIN="ecs-utdevents-dev.firebaseapp.com",
+REACT_APP_FIREBASE_CONFIG_PROJECTID="ecs-utdevents-dev",
+REACT_APP_FIREBASE_CONFIG_STORAGEBUCKET="ecs-utdevents-dev.appspot.com",
+REACT_APP_FIREBASE_CONFIG_MESSAGINGSENDERID="486765773237",
+REACT_APP_FIREBASE_CONFIG_APPID="1:486765773237:web:b07f6b68a760c19d9359fc",
+REACT_APP_FIREBASE_CONFIG_MEASUREMENTID="G-E79XC8FBLG"
+```
+
+### Run Locally
+Now you can start running the front-end code base locally! Simply run:
+
+`yarn start`
+
+from inside the front-end/ folder and you should be led to a local version of the website.
+
 ## React Context
 React Context is a relatively new feature that allows for certain data to be made available throughout all child components of the Context without having to pass it in as a property. This is especially useful when there may be many intermediate components that don't directly use the data but have children who do. There are two important instances where we use contexts: **User Context** and **AllOrgContext**.
 
