@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>API Documentation - ecs-utdevents documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "API Documentation";
+    var mkdocs_page_input_path = "api_documentation.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ecs-utdevents documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Developers</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Front-End</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../backend/">Back-End</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">API Documentation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#events">Events</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#data-model">Data Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#controller">Controller</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#organizations">Organizations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#data-model_1">Data Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#controller_1">Controller</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tags">Tags</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#data-model_2">Data Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#controller_2">Controller</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-an-api-and-how-can-i-use-it">What is an API and how can I use it?</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../admin/">Administrative</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ecs-utdevents documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developers &raquo;</li>
+        
+      
+    
+    <li>API Documentation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="api-documentation">API Documentation</h1>
+<p>All API calls go through the base URL <code>https://ecsutdevents.azurewebsites.net/</code>. For example, you can GET all events by visiting or using an HTTP GET request on <code>https://ecsutdevents.azurewebsites.net/api/events/all</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All times are stored server-side in UTC. Convert them to your local time zone.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must have proper cloud firestore authentication headers to perform POST, PUT, or DELETE requests. We do not currently have plans to allow organizations access to these headers, as it may introduce a security vulnerability.</p>
+</div>
+<h2 id="events">Events</h2>
+<h3 id="data-model">Data Model</h3>
+<p><pre class="highlight"><code>{
+    "id": "string",
+    "title": "string",
+    "location": "string",
+    "link": "string",
+    "startTime": "DateTime",
+    "endTime": "DateTime",
+    "description": "string",
+    "orgs": [
+        "org_slug: string",
+        "ACM"
+    ],
+    "tags": [
+        "name: string",
+        "combinatorial-graph-algorithms"
+    ],
+    "lastUpdated": "DateTime"
+}</code></pre>
+where <code>DateTime</code> is a string of the form <code>"yyyy-mm-ddThh:mm:ssZ"</code> (UTC time).</p>
+<h3 id="controller">Controller</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Method</th>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create</td>
+<td>POST</td>
+<td><code>/api/events</code></td>
+<td>Create an event. Event must be specified as JSON in <strong>body</strong> of request (<code>id</code> not required). <code>id</code> returned on successful POST</td>
+</tr>
+<tr>
+<td>Find all</td>
+<td>GET</td>
+<td><code>/api/events/all</code></td>
+<td>Retrieve all events in the database</td>
+</tr>
+<tr>
+<td>Find single</td>
+<td>GET</td>
+<td><code>/api/events/{event_id}</code></td>
+<td>Retrieves the event with id <code>{event_id}</code></td>
+</tr>
+<tr>
+<td>Find all events by an org</td>
+<td>GET</td>
+<td><code>/api/events/org={org_slug}</code></td>
+<td>Retrieves events where at least one of the orgs matches <code>{org_slug}</code></td>
+</tr>
+<tr>
+<td>Find events within date range</td>
+<td>GET</td>
+<td><code>/api/events/date/start={startTime}&amp;end={endTime}</code></td>
+<td>Get all events within a specific date range, must provide both <code>startTime</code> and <code>endTime</code> in the following format: <code>"yyyy-mm-ddThh:mm:ssZ"</code>. You can supply "none" to ONE of the variables to fallback to a default that encapsulates all past or future events.</td>
+</tr>
+<tr>
+<td>Update</td>
+<td>PUT</td>
+<td><code>/api/events</code></td>
+<td>Update an event. <strong>All fields of the event must be specified as JSON in body of request (INCLUDING id)</strong>. <code>id</code> returned on successful PUT</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>DELETE</td>
+<td><code>/api/events/{event_id}</code></td>
+<td>Deletes the event with id <code>{event_id}</code></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="organizations">Organizations</h2>
+<h3 id="data-model_1">Data Model</h3>
+<pre class="highlight"><code>{
+    "uId": "string",
+    "slug": "string",
+    "name": "string",
+    "shortName": "string",
+    "website": "string",
+    "description": "string",
+    "imageUrl": "string"
+    "socialMedia": {
+        "key:string": "value:string"
+        "facebook": "fb",
+        "twitter": "tw"
+    }
+}</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>uId</code> is the <code>id</code> of the organization. This must be the same <code>uId</code> received after logging in.</p>
+</div>
+<h3 id="controller_1">Controller</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Method</th>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create</td>
+<td>POST</td>
+<td><code>/api/orgs</code></td>
+<td>Create an organization. Organization must be specified as JSON in <strong>body</strong> of request (<strong><code>uId</code> REQUIRED</strong>). <code>uId</code> returned on successful POST</td>
+</tr>
+<tr>
+<td>Find all</td>
+<td>GET</td>
+<td><code>/api/orgs/all</code></td>
+<td>Retrieve all organizations in the database</td>
+</tr>
+<tr>
+<td>Find single by uid</td>
+<td>GET</td>
+<td><code>/api/orgs/{org_id}</code></td>
+<td>Retrieve the organization with id <code>{org_id}</code></td>
+</tr>
+<tr>
+<td>Find single by slug</td>
+<td>GET</td>
+<td><code>/api/orgs/slug={org_slug}</code></td>
+<td>Retrieve the organization with slug <code>{org_slug}</code></td>
+</tr>
+<tr>
+<td>Update</td>
+<td>PUT</td>
+<td><code>/api/orgs</code></td>
+<td>Update an organization. <strong>All fields of organization must be specified as JSON in body (<code>uId</code> REQUIRED</strong>). <code>uId</code> returned on successful PUT</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>DELETE</td>
+<td>/api/orgs/{org_uId}</td>
+<td>Deletes the organization with id <code>{org_uId}</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="tags">Tags</h2>
+<h3 id="data-model_2">Data Model</h3>
+<pre class="highlight"><code>{
+    "id": "string",
+    "name": "string"
+}</code></pre>
+<h3 id="controller_2">Controller</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Method</th>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create</td>
+<td>POST</td>
+<td><code>/api/tags</code></td>
+<td>Create a tag. Tag must be specified as JSON in <strong>body</strong> of request (id not required). <code>id</code> returned on successful POST</td>
+</tr>
+<tr>
+<td>Find all</td>
+<td>GET</td>
+<td><code>/api/tags/all</code></td>
+<td>Retrieve all tags in the database</td>
+</tr>
+<tr>
+<td>Update</td>
+<td>PUT</td>
+<td><code>/api/tags</code></td>
+<td>Update a tag. <strong>Id and name of tag must be specified as JSON in body (Id REQUIRED</strong>). <code>id</code> returned on successful PUT</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>DELETE</td>
+<td><code>/api/tags/{tag_id}</code></td>
+<td>Deletes the tag with id <code>{tag_id}</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="what-is-an-api-and-how-can-i-use-it">What is an API and how can I use it?</h2>
+<p>An API is...</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../admin/" class="btn btn-neutral float-right" title="Administrative">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../backend/" class="btn btn-neutral" title="Back-End"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../backend/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../admin/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

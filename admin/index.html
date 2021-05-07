@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Administrative - ecs-utdevents documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Administrative";
+    var mkdocs_page_input_path = "admin.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ecs-utdevents documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Developers</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Front-End</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../backend/">Back-End</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../api_documentation/">API Documentation</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Administrative</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#adding-an-organization">Adding an organization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-docs">Adding Docs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#deploying">Deploying</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#testing">Testing</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#front-end">Front-End</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#testing_1">Testing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment">Deployment</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ecs-utdevents documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developers &raquo;</li>
+        
+      
+    
+    <li>Administrative</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="administrative">Administrative</h1>
+<p>This documentation is meant to be used by the maintainers of the ecs-utdevents, i.e. the people who have access to the <code>utdecsevents@gmail.com</code> account.</p>
+<h2 id="adding-an-organization">Adding an organization</h2>
+<ol>
+<li>Navigate to Firebase console.</li>
+<li>Go to the ecs-utdevents project.</li>
+<li>Using the left-hand sidebar, navigate to <strong>Authentication</strong>.</li>
+<li>
+<p>Select <strong>Add user</strong>. You’ll be prompted to enter a Email and Password for the user. Use the Organization Email for the Email and a randomly generated string for the password.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will not give nor store this string anywhere and the org will be directed to reset the password before being able to login.
+We used lastpass password generator and 99-length strings for security reasons.
+If an org gave the wrong email, simply delete the organization and create a new one.</p>
+</div>
+</li>
+<li>
+<p>After creating the user, copy the respective User UID from the Users table.</p>
+</li>
+<li>Navigate to Firestore Database using the left-hand sidebar.</li>
+<li>Here we are going to add a document to the organizations collection<ul>
+<li>Choose <strong>organizations</strong> in the leftmost column</li>
+<li>Select <strong>Add document</strong></li>
+<li>For Document ID paste the User UID you copied from the Authentication section.</li>
+<li>For fields add the following. <strong>Note that capitalization and spelling are very important and all fields MUST be added!</strong> <ul>
+<li><code>Name</code>* [string]</li>
+<li><code>ShortName</code>* [string]</li>
+<li><code>Website</code>* [string]</li>
+<li><code>Description</code>* [string]</li>
+<li><code>UId</code>** [string]</li>
+<li><code>Slug</code>*** [string]</li>
+<li><code>ImageUrl</code> [string]</li>
+<li><code>SocialMedia</code> [map]</li>
+<li><code>discord</code> [string]</li>
+<li><code>facebook</code> [string]</li>
+<li><code>groupme</code> [string]</li>
+<li><code>instagram</code> [string]</li>
+<li><code>linkedIn</code> [string]</li>
+<li><code>snapchat</code> [string]<ul>
+<li>*These fields are required and should be filled in with info from the Org Sign up form.</li>
+<li>**<code>UId</code> this is the User UID copied from Authentication, we store it both in the document and as the document ID.</li>
+<li>***<code>Slug</code> is a required field that we don’t get from the Org Sign up form. The default slug should just be the name of the organization in all lower case with dashes instead of space (i.e. <code>“Women Who Compute”</code> =&gt; <code>“women-who-compute”</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>ImageUrl</code> and all the <code>SocialMedia</code> subfields are left empty since organizations are not required to submit them at time of application. However, it is still important to create these fields for organizations to be able to add them on their profile page!</p>
+</div>
+<p>You’re all done creating a new Org User for the website!
+Now you can email the organization point of contact and the organization itself with instructions on how to get started! There’s a template inside the ecsutdevents gmail account that we use for Organization Approvals.</p>
+<h2 id="adding-docs">Adding Docs</h2>
+<p>We use <a href="https://www.mkdocs.org/"><strong>MkDocs</strong></a>.</p>
+<h3 id="deploying">Deploying</h3>
+<p>If you are familiar with Markdown you don't really even need to set up everything below. That's only necessary for local building and testing in case you are adding some new pages/fancy things that you aren't sure will work. Otherwise you can always just edit the files directly on GitHub.</p>
+<p>To re-deploy the documents to the GitHub Pages websites, go to the <strong>Actions</strong> Tab in this repository, select <strong>Publish docs via GitHub Pages</strong>, click on <strong>Run Workflow</strong>, select the main branch, and now click on the green <strong>Run Workflow</strong> button.</p>
+<p>This will start an automated GitHub Action which will build the main branch and deploy it to our GitHabe Pages website!</p>
+<h3 id="getting-started">Getting Started</h3>
+<p>To contribute to and run these docs locally you'll need to download a couple of dependencies.</p>
+<h4 id="requirements">Requirements</h4>
+<p>You'll need Python 3.5+ installed. If you don't have this already then you can downlaod it <a href="https://www.python.org/downloads/">here</a>.</p>
+<p>You'll also need pip, a package manager for Python. If you downloaded Python from python.org then you will likely already have it pre-installed. If not you can download it separately <a href="https://pip.pypa.io/en/stable/installing/">here</a>.</p>
+<p>To build and test the documents you'll need the following python dependencies:
+- mkdocs (1.1.2)
+- pymdown-extensions (8.1.1)</p>
+<p>Fortunately we've included these dependencies in a <code>requirements.txt</code>. So all you have to do is run the following command:</p>
+<p><code>pip install -r requirements.txt</code></p>
+<h4 id="testing">Testing</h4>
+<p>You can test the docs by navigating into the folder and running the following command:</p>
+<p><code>mkdocs serve</code></p>
+<p>This will start a local build at <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>.</p>
+<p>You can find out more detail about local test on <a href="https://www.mkdocs.org/#getting-started">MkDocs website</a>.</p>
+<h2 id="front-end">Front-End</h2>
+<h3 id="testing_1">Testing</h3>
+<p>You can test locally and with Firebase Hosting. You should always be testing changes locally by running <code>yarn start</code>. However, in many cases you may also want to test your changes on a deployed test site before pushing it to our production site. This is made possible with the use of our development database! We've set up a separate dev environment for us to make changes and test them without affecting our live production site. You're already connected to the development database when you set up your front-end development environment above.</p>
+<p>To push to our dev site (<a href="https://ecs-utdevents-dev.web.app/">https://ecs-utdevents-dev.web.app/</a>). Follow the instructions below:</p>
+<ol>
+<li>Navigate to your local front-end folder</li>
+<li>Open up your local <code>firebase.json</code> file and change the <code>site</code> field to <strong><code>ecs-utdevents-dev</code></strong>. </li>
+<li>Make sure you have <a href="https://firebase.google.com/docs/cli#install_the_firebase_cli">Firebase CLI</a> tools downloaded on your computer.</li>
+<li>Run <code>firebase login</code> and login to utdecsevents@gmail.com</li>
+<li>Run <code>yarn build</code></li>
+<li>Run <code>firebase deploy -P dev</code></li>
+</ol>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do NOT commit your changes to <code>firebase.json</code> to Git. Pushing this change will cause our automatic deployment workflow to fail.</p>
+</div>
+<h3 id="deployment">Deployment</h3>
+<p>We have set up an automatic <a href="https://github.com/ecs-utd-events/ecs-utd-events/actions">GitHub Action</a> that deploys the main branch to our <a href="https://ecs-utdevents.web.app/">live site</a> whenever someone pushes to main. There are however a limited number of GitHub Action deployments available to a free organization (600 minutes/month) so to restrict crossing this limit and to restrict constant changes to UI/UX on the live site for users we mainly push changes to the <code>dev</code> branch. When we feel there are significant and well-tested changes on the <code>dev</code> branch we merge <code>dev</code> -&gt; <code>main</code>, triggering the GitHub Action as well.</p>
+<p>Note that this GitHub Action also allows us to securely push our code to Firebase Hosting without exposing the necessary configuration variables for Firebase Authentication. These are important to remain hidden for our production site so that some other developer cannot reuse our configuration and potentially use their own app to login to our user database. The majority of the configuration variables are stored in GitHub Secrets and are loaded into the environment variables when building.</p>
+<p>The main reason we use a GitHub Action is to hide these environment variables. When using the <code>firebase deploy</code> method shown in the <a href="./#testing_1">Testing</a> section above we create a local build (using <code>yarn build</code>) that stores all of the environemnt variables unecrypted and which can be accessed by a malicious actor.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../api_documentation/" class="btn btn-neutral" title="API Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../api_documentation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

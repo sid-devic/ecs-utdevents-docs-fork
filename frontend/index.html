@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Front-End - ecs-utdevents documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Front-End";
+    var mkdocs_page_input_path = "frontend.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ecs-utdevents documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Developers</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Front-End</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#environment-setup">Environment Setup</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-locally">Run Locally</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#react-context">React Context</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#user-context">User Context</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#allorgcontext">AllOrgContext</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#firebase-authentication">Firebase Authentication</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../backend/">Back-End</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../api_documentation/">API Documentation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../admin/">Administrative</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ecs-utdevents documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developers &raquo;</li>
+        
+      
+    
+    <li>Front-End</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="front-end">Front-End</h1>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>You'll need to have <a href="https://classic.yarnpkg.com/en/"><code>yarn</code></a> installed on your computer. Follow directions <a href="https://classic.yarnpkg.com/en/docs/install">here</a> to get yarn set up.</p>
+<p>Unless you have access to the ecs-utd-events organizations (i.e. you are a maintainer) you will likely have to fork the repo to your personal GitHub account. Once you've forked the repository you can then clone the repo to your local machine, make changes, commit them, push them back to the forked repo and then submit a Pull Request to the main repo.</p>
+<p>If you are a maintainer then you can simply clone the original repository. You can do so by using the following command:</p>
+<p><code>git clone https://github.com/ecs-utd-events/ecs-utd-events.git</code>.</p>
+<p>Once you have the repository on your local machine, navigate inside the ecs-utd-events and then into the front-end folder. Here you'll want to run:</p>
+<p><code>yarn install</code> or simply <code>yarn</code></p>
+<p>This will install all the dependencies in the React project.</p>
+<h3 id="environment-setup">Environment Setup</h3>
+<p>Inside the front-end folder you'll need to create a <code>.env</code> file to hold environment variables necessary to connect the front-end with the back-end server and Firebase Authentication. We have created a default <code>.env</code> file for developers testing on their local machine that connects to a staging/development database. This way any changes to the data/users does not effect our live site.</p>
+<p>Copy and paste the following into your <code>.env</code> file:
+<pre class="highlight"><code>REACT_APP_SERVER_URL="https://ecsutdevents-dev.azurewebsites.net"
+REACT_APP_FIREBASE_CONFIG_APIKEY="AIzaSyC3l1wm0HeN54hct_VKVIaRYagvIqXfuKo"
+REACT_APP_FIREBASE_CONFIG_AUTHDOMAIN="ecs-utdevents-dev.firebaseapp.com",
+REACT_APP_FIREBASE_CONFIG_PROJECTID="ecs-utdevents-dev",
+REACT_APP_FIREBASE_CONFIG_STORAGEBUCKET="ecs-utdevents-dev.appspot.com",
+REACT_APP_FIREBASE_CONFIG_MESSAGINGSENDERID="486765773237",
+REACT_APP_FIREBASE_CONFIG_APPID="1:486765773237:web:b07f6b68a760c19d9359fc",
+REACT_APP_FIREBASE_CONFIG_MEASUREMENTID="G-E79XC8FBLG"</code></pre></p>
+<h3 id="run-locally">Run Locally</h3>
+<p>Now you can start running the front-end code base locally! Simply run:</p>
+<p><code>yarn start</code></p>
+<p>from inside the front-end/ folder and you should be led to a local version of the website.</p>
+<h2 id="react-context">React Context</h2>
+<p>React Context is a relatively new feature that allows for certain data to be made available throughout all child components of the Context without having to pass it in as a property. This is especially useful when there may be many intermediate components that don't directly use the data but have children who do. There are two important instances where we use contexts: <strong>User Context</strong> and <strong>AllOrgContext</strong>.</p>
+<p>You can read more about React Context and its uses <a href="https://reactjs.org/docs/context.html">here</a>.</p>
+<h3 id="user-context">User Context</h3>
+<p>User Context is used to manage the information of a logged in organization throughout the application. In <a href="https://github.com/ecs-utd-events/ecs-utd-events/blob/dev/front-end/src/providers/UserProvider.jsx">UserProvider.jsx</a> we create the UserContext and it's appropriate provider. Here we use Firebase's Authentication API to set our user and once we have received the user we fetch the corresponding organization data from our back-end Web API using the user's ID. </p>
+<p>We then create an object that stores both the Firebase Authentication data and the organization object and pass it into the UserContext.Provider as the value to be shared with all the children components. Now inside of any child component we can import <code>UserContext</code>, pass it into the <code>useContext()</code> React hook like so: <code>useContext(UserContext)</code> and get the org and user data.</p>
+<h3 id="allorgcontext">AllOrgContext</h3>
+<p>Similarly, we realized that Firebase charges us by the number of queries we make to the database and wanted to reduce the number of times we called for all the organization data. Since the organization data does not change frequently and we need to use it frequently to convert orgIDs to shortNames or to full names we created a AllOrgContext within <a href="https://github.com/ecs-utd-events/ecs-utd-events/blob/dev/front-end/src/providers/AllOrgProvider.jsx">AllOrgProvider.jsx</a>. Here we simply fetch all the organization data, store it in a state variable, and pass it in as the value for the <code>AllOrgContext.Provider</code>. Now we can access all the organization data anywhere in the application without having to refetch the data.</p>
+<p>In the future we may want to use Contexts to create a light vs. dark theme and to reduce other frequent fetch requests (such as tags or events).</p>
+<h2 id="firebase-authentication">Firebase Authentication</h2>
+<p>The Front-End directly connects to Firebase for Authentication. This is handled mainly in the following files:</p>
+<ul>
+<li>
+<p><a href="https://github.com/ecs-utd-events/ecs-utd-events/blob/dev/front-end/src/providers/UserProvider.jsx"><strong>UserProvider.jsx</strong></a>: we explain this above in <a href="./#user-context">UserContext</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/ecs-utd-events/ecs-utd-events/blob/dev/front-end/src/components/AdminTab.js"><strong>AdminTab.js</strong></a>: here we must provide the function for an organization to logout.</p>
+</li>
+<li>
+<p><a href="https://github.com/ecs-utd-events/ecs-utd-events/blob/dev/front-end/src/components/NavbarComponent.js"><strong>NavbarComponent.js</strong></a>: same as above.</p>
+</li>
+<li>
+<p><a href="https://github.com/ecs-utd-events/ecs-utd-events/blob/dev/front-end/src/pages/Login.js"><strong>Login.js</strong></a>: here we handle submitting a given username and password to Firebase for login and then allowing the UserContext to propagate changes throughout the application.</p>
+</li>
+<li>
+<p><a href="https://github.com/ecs-utd-events/ecs-utd-events/blob/dev/front-end/src/firebase.js"><strong>firebase.js</strong></a>: this file simply takes in all the environment variables necessary and establishes a connection with Firebase. This is then imported in all the above files to allow access to the <a href="https://firebase.google.com/docs/auth/web/start?hl=en">Firebase Auth API</a>.</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../backend/" class="btn btn-neutral float-right" title="Back-End">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../faq/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../faq/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../backend/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

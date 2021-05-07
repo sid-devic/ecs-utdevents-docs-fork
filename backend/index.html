@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Back-End - ecs-utdevents documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Back-End";
+    var mkdocs_page_input_path = "backend.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ecs-utdevents documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Developers</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Front-End</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Back-End</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#deploying-the-backend">Deploying the Backend</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#new-deployment-from-visual-studio">New Deployment from Visual Studio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#publishing-to-the-existing-app-form-visual-studio">Publishing to the Existing App form Visual Studio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notes-on-azure-app-services">Notes on Azure App Services</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-backend-locally-and-without-visual-studio">Running backend locally and without Visual Studio</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#find-the-file-to-run">Find the file to run</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#check-with-postman">Check with Postman</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#keeping-the-app-server-awake">Keeping the App Server Awake</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#backend-code">Backend Code</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#software-design">Software Design</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-a-get-api-call">Adding a GET API call</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../api_documentation/">API Documentation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../admin/">Administrative</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ecs-utdevents documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developers &raquo;</li>
+        
+      
+    
+    <li>Back-End</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="back-end">Back-End</h1>
+<h2 id="deploying-the-backend">Deploying the Backend</h2>
+<p>We use <a href="Hosting site: https://azure.microsoft.com/en-us/services/app-service/">Azure</a> for hosting the backend. The API calls from the front-end route through the base URL <code>https://ecsutdevents.azurewebsites.net</code>. If this URL changes, it will be updated in the <em>overview</em> tab in the following image.</p>
+<p><img alt="" src="../img/overview.png" /></p>
+<h3 id="new-deployment-from-visual-studio">New Deployment from Visual Studio</h3>
+<p>Here are instructions for creating a new backend deployment in Azure. First, select <em>App Services</em> from the Azure <a href="https://portal.azure.com/#home">website</a>.</p>
+<p><img alt="" src="../img/app_service.png" /></p>
+<p>Next, click <em>Add</em> to create a new app service.</p>
+<p><img alt="" src="../img/add_app_service.png" /></p>
+<p>Fill out the details.</p>
+<p><img alt="" src="../img/details_app_service.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>Name</em> parameter will change the URL of the API.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the <em>Runtime Stack</em>, we are currently using <em>.Net Core 3.1</em>, but you can check in the <code>.csproj</code> file within visual studio:</p>
+<p><img alt="" src="../img/dot_net_version.png" /></p>
+</div>
+<p>Click <em>Review and Create</em>.</p>
+<p><img alt="" src="../img/review_and_create.png" /></p>
+<p>Click <em>Create</em>.</p>
+<p><img alt="" src="../img/create_app_service.png" /></p>
+<p>Go to <em>Build</em> -&gt; <em>Publish UTD_ECS_Events_WebAPI</em> on Visual Studio.</p>
+<p><img alt="" src="../img/build_vs.png" /></p>
+<p>Click <em>New</em>.</p>
+<p><img alt="" src="../img/new_publish_vs.png" /></p>
+<p>Select <em>Azure</em> and click <em>Next</em></p>
+<p><img alt="" src="../img/target_publish_vs.png" /></p>
+<p>Select <em>Azure App Service (Windows)</em> and click <em>Next</em>.</p>
+<p><img alt="" src="../img/specific_target_vs.png" /></p>
+<p>Select the App Service name that you created from step 3 and click <em>Finish</em>.</p>
+<p><img alt="" src="../img/app_service_vs_publish.png" /></p>
+<p>Click <em>Publish</em>.</p>
+<p><img alt="" src="../img/publish_final_step_vs.png" /></p>
+<p>You can check that it’s successfully deployed by going to the url and using any api calls.
+i.e. <code>https://testfordocumentation.azurewebsites.net/api/events/all</code> should display the list of events.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When deploying newly, to reduce the initial load time, see <a href="#keeping-the-app-server-awake">Keeping the App Server Awake</a>.</p>
+</div>
+<h3 id="publishing-to-the-existing-app-form-visual-studio">Publishing to the Existing App form Visual Studio</h3>
+<p>Go to <em>Build</em> -&gt; <em>Publish UTD_ECS_Events_WebAPI</em> on Visual Studio.</p>
+<p><img alt="" src="../img/build_vs.png" /></p>
+<p>Select the destination using the drop down.</p>
+<p><img alt="" src="../img/deploy_existing_publish.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not see the destination you want to publish to (if you haven’t created it yet), follow the steps 7-10 of the section <a href="#new-deployment-from-visual-studio">New Deployment from Visual Studio</a> to add a new destination.</p>
+</div>
+<p>Click <em>Publish</em>.</p>
+<p><img alt="" src="../img/publish_final_step_vs.png" /></p>
+<p>You can check that it’s successfully deployed by going to the url and using any api calls.
+i.e. <code>https://testfordocumentation.azurewebsites.net/api/events/all</code> should display the list of events.</p>
+<h3 id="notes-on-azure-app-services">Notes on Azure App Services</h3>
+<p>Limitations of using free service: Always on is set to False. See <a href="#keeping-the-app-server-awake">Keeping the App Server Awake</a>.
+We can’t use a custom domain name. This is why we’re using Firebase hosting for front-end hosting.
+We don’t have remote access to the machine. CPU is shared.</p>
+<h2 id="running-backend-locally-and-without-visual-studio">Running backend locally and without Visual Studio</h2>
+<p>If you just want to run the backend build (not front end) on your local computer, here are some instructions.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>First you'll want to ensure you have .NET Core downloaded. You will need at least version 3.1 or above.
+You can check your version by running: <code>dotnet --version</code>.
+Download <strong>.NET Core</strong> from <a href="https://dotnet.microsoft.com/download">here</a>.</p>
+<h3 id="find-the-file-to-run">Find the file to run</h3>
+<p>Whenever the back-end team makes changes and runs their code in Visual Studio they are actually creating build files which we will use to run the code directly rather than recompiling it.</p>
+<p>You'll find the file we want to run in <a href="https://github.com/ecs-utd-events/ecs-utd-events">this repo</a> at the following location: <code>ecs-utd-events/backend_build/bin/Debug/netcoreapp3.1/UTD_ECS_Events_WebAPI.dll</code>.
+Once you find this file you'll want to copy either a relative path or full path and simply run: <code>dotnet &lt;insert_filepath&gt;</code> to begin running the program.</p>
+<h3 id="check-with-postman">Check with Postman</h3>
+<p>The application will be running at the following URL: <code>http:localhost:80/</code>, and you can now send requests using <a href="https://www.postman.com/downloads/">Postman</a>.
+You can currently (as of 02/18/21 @ 11:27:59 PM) send a GET, POST, or DELETE request to <code>http:localhost:80/api/events</code>.
+If you simply want to check the GET request you can also use any internet browser.</p>
+<h3 id="keeping-the-app-server-awake">Keeping the App Server Awake</h3>
+<p>Website: <code>https://uptimerobot.com/</code>. Uptime robot pings the server every 5 minutes to keep it awake. Login with <code>utdecsevents@gmail.com</code> google account.</p>
+<h2 id="backend-code">Backend Code</h2>
+<h3 id="software-design">Software Design</h3>
+<p>The backend consists of three primary layers:
+- <strong>Repository</strong>: This layer is responsible for sorting, searching, and executing queries against the Cloud Firestore database. 
+- <strong>Service</strong>: This layer is the middleware between the user-facing API and the database. It could be used to alter the type or model of data received from the database before it is sent to the user. For example, if the user wanted all events without their id, the service would ask the repository for all events, then modify them to remove all their ids, and then return it to the user.
+- <strong>Controller</strong>: This is where the API endpoints of the server are defined. It will parse and authenticate the API request sent to it, and on success, call the appropriate service method to retrieve the data required. </p>
+<h3 id="adding-a-get-api-call">Adding a GET API call</h3>
+<ul>
+<li>Navigate to the appropriate repository file in <code>Repositories</code>. Create an <code>async</code> method that does the following:</li>
+<li>Executes a query against the database with the appropriate filters as required by the GET API call.</li>
+<li>Returns all the documents returned by the query.</li>
+<li>Navigate to the appropriate service file in <code>Services</code>. Create a method that calls the method you defined in the repository and makes it execute the task. Return the result of that task.</li>
+<li>Navigate to the appropriate controller file in <code>Controllers</code>. Create a new method in that file with the following:</li>
+<li>Appropriate parameters (for example, if the user wants to get all events by tag, then the tag should be a parameter)</li>
+<li>Specify the URL users will use to access this API endpoint above the method: <code>[HttpGet("&lt;URL_here&gt;")]</code></li>
+<li>Return type should be the appropriate type enclosed within <code>ActionResult&lt;my_type&gt;</code></li>
+<li>The method should call the service method you defined and return the result.</li>
+</ul>
+<h3 id="authentication">Authentication</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api_documentation/" class="btn btn-neutral float-right" title="API Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../frontend/" class="btn btn-neutral" title="Front-End"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../frontend/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../api_documentation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
