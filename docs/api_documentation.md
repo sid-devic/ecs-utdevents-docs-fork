@@ -96,3 +96,6 @@ where `DateTime` is a string of the form ``"yyyy-mm-ddThh:mm:ssZ"`` (UTC time).
 |Delete|	DELETE|	`/api/tags/{tag_id}`|	Deletes the tag with id `{tag_id}`|
 
 <br>
+
+## What is an API and how can I use it?
+An API is...
