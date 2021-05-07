@@ -1,7 +1,93 @@
 # Back-End
 
 ## Deploying the Backend
-asd
+We use [Azure](Hosting site: https://azure.microsoft.com/en-us/services/app-service/) for hosting the backend. The API calls from the front-end route through the base URL `https://ecsutdevents.azurewebsites.net`. If this URL changes, it will be updated in the *overview* tab in the following image.
+
+![](img/overview.png)
+
+### New Deployment from Visual Studio
+Here are instructions for creating a new backend deployment in Azure. First, select *App Services* from the Azure [website](https://portal.azure.com/#home).
+
+![](img/app_service.png)
+
+Next, click *Add* to create a new app service.
+
+![](img/add_app_service.png)
+
+Fill out the details.
+
+![](img/details_app_service.png)
+
+!!! note
+    The *Name* parameter will change the URL of the API.
+
+!!! note
+    For the *Runtime Stack*, we are currently using *.Net Core 3.1*, but you can check in the `.csproj` file within visual studio:
+
+    ![](img/dot_net_version.png)
+
+Click *Review and Create*.
+
+![](img/review_and_create.png)
+
+Click *Create*.
+
+![](img/create_app_service.png)
+
+Go to *Build* -> *Publish UTD_ECS_Events_WebAPI* on Visual Studio.
+
+![](img/build_vs.png)
+
+Click *New*.
+
+![](img/new_publish_vs.png)
+
+Select *Azure* and click *Next*
+
+![](img/target_publish_vs.png)
+
+Select *Azure App Service (Windows)* and click *Next*.
+
+![](img/specific_target_vs.png)
+
+Select the App Service name that you created from step 3 and click *Finish*.
+
+![](img/app_service_vs_publish.png)
+
+Click *Publish*.
+
+![](img/publish_final_step_vs.png)
+
+You can check that it’s successfully deployed by going to the url and using any api calls.
+i.e. `https://testfordocumentation.azurewebsites.net/api/events/all` should display the list of events.
+
+!!! note 
+    When deploying newly, to reduce the initial load time, see [Keeping the App Server Awake](#keeping-the-app-server-awake).
+
+### Publishing to the Existing App form Visual Studio
+Go to *Build* -> *Publish UTD_ECS_Events_WebAPI* on Visual Studio.
+
+![](img/build_vs.png)
+
+Select the destination using the drop down.
+
+![](img/deploy_existing_publish.png)
+
+!!! note
+    If you do not see the destination you want to publish to (if you haven’t created it yet), follow the steps 7-10 of the section [New Deployment from Visual Studio](#new-deployment-from-visual-studio) to add a new destination.
+
+Click *Publish*.
+
+![](img/publish_final_step_vs.png)
+
+You can check that it’s successfully deployed by going to the url and using any api calls.
+i.e. `https://testfordocumentation.azurewebsites.net/api/events/all` should display the list of events.
+
+### Notes on Azure App Services
+Limitations of using free service: Always on is set to False. See [Keeping the App Server Awake](#keeping-the-app-server-awake).
+We can’t use a custom domain name. This is why we’re using Firebase hosting for front-end hosting.
+We don’t have remote access to the machine. CPU is shared.
+
 
 ## Running backend locally and without Visual Studio
 If you just want to run the backend build (not front end) on your local computer, here are some instructions.
@@ -21,6 +107,9 @@ Once you find this file you'll want to copy either a relative path or full path 
 The application will be running at the following URL: `http:localhost:80/`, and you can now send requests using [Postman](https://www.postman.com/downloads/).
 You can currently (as of 02/18/21 @ 11:27:59 PM) send a GET, POST, or DELETE request to `http:localhost:80/api/events`.
 If you simply want to check the GET request you can also use any internet browser.
+
+### Keeping the App Server Awake
+Website: `https://uptimerobot.com/`. Uptime robot pings the server every 5 minutes to keep it awake. Login with `utdecsevents@gmail.com` google account.
 
 ## Backend Code
 ### Software Design
